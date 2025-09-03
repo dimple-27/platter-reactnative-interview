@@ -108,6 +108,7 @@ function HomeScreen() {
       </View>
     </View>
   );
+
   const changeModalVisibility = () => setModalVisible(!modalVisible);
 
   return (
@@ -131,6 +132,7 @@ function HomeScreen() {
     </View>
   );
 }
+
 const styles = StyleSheet.create({
   border: { padding: 10, borderBottomWidth: 1, borderColor: '#ccc' },
   title: { fontWeight: 'medium', fontSize: 12 },

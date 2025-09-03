@@ -7,5 +7,5 @@ interface Product {
   };
   unitPrice: number;
   id: number;
-  cartPrice?:number
+  cartPrice?: number;
 }

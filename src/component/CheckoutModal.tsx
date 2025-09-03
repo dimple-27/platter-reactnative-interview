@@ -24,11 +24,11 @@ const CheckoutModal = ({
     const updatedProducts = productList.map(product => {
       if (product.salePrice) {
         const saleprice =
-          parseInt(product.quantity / product.salePrice?.quantity) *
-          product.salePrice?.price;
+          Math.floor(product.quantity / product.salePrice.quantity) *
+          product.salePrice.price;
+
         const extraPrice =
-          parseInt(product.quantity % product.salePrice?.quantity) *
-          product.unitPrice;
+          (product.quantity % product.salePrice.quantity) * product.unitPrice;
         console.log(extraPrice + saleprice);
         return { ...product, cartPrice: extraPrice + saleprice };
       }
@@ -101,7 +101,6 @@ const CheckoutModal = ({
                 <Text style={styles.originalPrice}>
                   Original Price : ${total?.salePrice}
                 </Text>
-
                 <Text style={styles.discountedPrice}>
                   Discounted Price :${total?.totalPrice}
                 </Text>
